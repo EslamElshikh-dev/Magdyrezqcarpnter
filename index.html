@@ -1,1157 +1,579 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="مجدي رزق فني نجارة بالرياض. متخصص في تفصيل غرف النوم، الخزائن، والديكورات الخشبية بأعلى جودة. نخدم حي المصيف، حي التعاون، وكافة أحياء شمال الرياض.">
-
     <meta name="keywords" content="فني نجارة, نجار الرياض, تفصيل خزائن, غرف نوم, ديكورات خشبية, مجدي رزق, نجار حي المصيف, نجار حي التعاون, صيانة نجارة">
-
     
-
     <meta name="google-site-verification" content="pL1De9gqs2FyjpEamGfW8ThnER5EAtKVMYMkBsVfLjk" />
 
-
-
     <meta property="og:title" content="مجدي رزق | فني نجارة وديكورات خشبية">
-
     <meta property="og:description" content="أرقى خدمات النجارة وتفصيل الموبيليا بلمسات فنية إبداعية في الرياض (حي المصيف والتعاون).">
-
     <meta property="og:image" content="https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png">
-
     <meta property="og:type" content="website">
 
-
-
     <title>مجدي رزق | فني نجارة وديكورات خشبية بالرياض</title>
-
     
-
     <link rel="icon" href="https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png" type="image/png">
-
     <link rel="apple-touch-icon" href="https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png">
 
-
-
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     
-
     <style>
-
         /* ================= المتغيرات والألوان (ثيم الخشب الفاخر) ================= */
-
         :root {
-
             --bg-color: #1a110a; 
-
             --surface-color: #2b1d14; 
-
             --gold-primary: #d28b4b; 
-
             --gold-light: #e8bd9b; 
-
             --text-light: #f4ece6; 
-
             --text-muted: #b8a598; 
-
             --silver: #a07855; 
-
         }
-
-
 
         /* الإعدادات العامة والخطوط */
-
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
             font-family: 'Tajawal', sans-serif;
-
             scroll-behavior: smooth;
-
         }
-
-
 
         html, body {
-
             width: 100%;
-
             overflow-x: hidden;
-
         }
-
-
 
         body {
-
             background-color: var(--bg-color);
-
             color: var(--text-light);
-
             line-height: 1.6;
-
             padding-bottom: 90px;
-
         }
-
-
 
         body.no-scroll { overflow: hidden; }
 
-
-
         /* ================= نظام اللغتين (CSS) ================= */
-
         html[lang="ar"] .en { display: none; }
-
         html[lang="en"] .ar { display: none; }
-
         html[lang="en"] { direction: ltr; }
-
         /* ======================================================= */
 
-
-
         /* شاشة التحميل (Loader) الدائرية الفخمة */
-
         #loader {
-
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-
             background-color: var(--bg-color); z-index: 99999;
-
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-
             transition: opacity 0.5s ease, visibility 0.5s ease;
-
         }
-
         #loader.hidden { opacity: 0; visibility: hidden; }
-
         .loader-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
-
         
-
         /* الإطار الدائري الخشبي/الذهبي المضيء */
-
         .loader-image-frame {
-
             width: 160px; height: 160px; border-radius: 50%;
-
             background: radial-gradient(circle, var(--surface-color) 0%, var(--bg-color) 100%);
-
             border: 4px solid transparent;
-
             border-top-color: var(--gold-primary);
-
             border-bottom-color: var(--gold-primary);
-
             box-shadow: 0 0 30px rgba(210, 139, 75, 0.2), inset 0 0 15px rgba(210, 139, 75, 0.1);
-
             display: flex; justify-content: center; align-items: center;
-
             margin-bottom: 25px; position: relative;
-
             animation: spinGlow 2s linear infinite;
-
         }
-
         
-
         /* تثبيت اللوجو وحركته لكي لا يدور مع الإطار */
-
         .loader-image-frame img { 
-
             width: 100px; height: auto; object-fit: contain; 
-
             border-radius: 50%;
-
             filter: drop-shadow(0 0 15px rgba(210, 139, 75, 0.6));
-
             animation: counterSpinPulse 2s linear infinite;
-
         }
-
-
 
         @keyframes spinGlow {
-
             0% { transform: rotate(0deg); box-shadow: 0 0 20px rgba(210, 139, 75, 0.2); }
-
             50% { box-shadow: 0 0 40px rgba(210, 139, 75, 0.6); }
-
             100% { transform: rotate(360deg); box-shadow: 0 0 20px rgba(210, 139, 75, 0.2); }
-
         }
-
         
-
         @keyframes counterSpinPulse {
-
             0% { transform: rotate(0deg) scale(0.95); }
-
             50% { transform: rotate(-180deg) scale(1.1); }
-
             100% { transform: rotate(-360deg) scale(0.95); }
-
         }
-
         
-
         .loading-text { color: var(--gold-light); font-size: 1.1rem; font-weight: 500; margin-top: 10px; }
-
         .dots::after { content: ''; animation: dotsLoader 1.5s steps(4, end) infinite; }
-
         @keyframes dotsLoader { 0%, 20% { content: ''; } 40% { content: '.'; } 60% { content: '..'; } 80%, 100% { content: '...'; } }
-
         .loader-footer { position: absolute; bottom: 40px; width: 100%; text-align: center; }
 
-
-
         /* الرأس (Header) */
-
         header {
-
             background-color: rgba(43, 29, 20, 0.95); padding: 15px 5%;
-
             position: fixed; width: 100%; top: 0; z-index: 1000;
-
             display: flex; justify-content: space-between; align-items: center;
-
             border-bottom: 1px solid rgba(210, 139, 75, 0.3); backdrop-filter: blur(10px);
-
         }
-
         .header-right { display: flex; align-items: center; gap: 15px; }
-
         .site-title { color: var(--gold-primary); font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
-
         .menu-btn { color: var(--gold-primary); font-size: 1.5rem; cursor: pointer; background: none; border: none; transition: 0.3s; }
-
         .menu-btn:hover { transform: scale(1.1); }
-
         .lang-btn {
-
             background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary);
-
             padding: 3px 8px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 0.85rem; transition: 0.3s; font-family: sans-serif;
-
         }
-
         .lang-btn:hover { background: var(--gold-primary); color: var(--bg-color); }
 
-
-
         /* القائمة الجانبية */
-
         .side-menu {
-
             position: fixed; top: 60px; width: 250px; height: calc(100vh - 60px);
-
             background-color: var(--surface-color); transition: 0.4s; z-index: 999; padding-top: 20px;
-
             right: -100%; border-left: 1px solid var(--gold-primary);
-
         }
-
         html[lang="ar"] .side-menu.active { right: 0; }
-
         html[lang="en"] .side-menu { left: -100%; right: auto; border-right: 1px solid var(--gold-primary); border-left: none; }
-
         html[lang="en"] .side-menu.active { left: 0; }
-
         .side-menu a {
-
             display: block; padding: 15px 20px; color: var(--text-light); text-decoration: none;
-
             font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
-
         }
-
         html[lang="ar"] .side-menu a:hover { color: var(--gold-primary); padding-right: 30px; background: rgba(0,0,0,0.2); }
-
         html[lang="en"] .side-menu a:hover { color: var(--gold-primary); padding-left: 30px; background: rgba(0,0,0,0.2); }
 
-
-
         /* الأقسام العامة */
-
         section { padding: 100px 5% 50px; }
-
         .section-title { text-align: center; color: var(--gold-primary); font-size: 2.5rem; margin-bottom: 40px; position: relative; }
-
         .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold-primary); margin: 10px auto; border-radius: 2px; }
 
-
-
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-
-
         /* الرئيسية */
-
         .hero {
-
             text-align: center; padding-top: 150px; min-height: 80vh; display: flex; flex-direction: column;
-
             justify-content: center; align-items: center; background: radial-gradient(circle at center, #352317 0%, #1a110a 100%);
-
         }
-
         .hero h1 {
-
             color: var(--gold-primary); font-size: clamp(1.8rem, 4vw, 2.5rem); max-width: 900px;
-
             line-height: 1.4; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(210, 139, 75, 0.3); padding: 0 10px;
-
         }
-
         .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; padding: 0 15px; }
 
-
-
         /* من نحن والخدمات والمزايا */
-
         .about-text {
-
             background-color: var(--surface-color); padding: 40px; border-radius: 15px;
-
             border: 1px solid rgba(210, 139, 75, 0.2); text-align: center; font-size: 1.1rem; line-height: 1.9;
-
         }
-
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-
         .service-card {
-
             background-color: var(--surface-color); border: 1px solid rgba(210, 139, 75, 0.4);
-
             border-radius: 15px; padding: 30px 20px; text-align: center; transition: 0.3s; cursor: pointer;
-
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
         }
-
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(210, 139, 75, 0.15); border-color: var(--gold-primary); background: #312117; }
-
         
-
         .icon-3d-wrapper {
-
             width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 50%;
-
             background: linear-gradient(145deg, #302016, #241810);
-
             box-shadow: 5px 5px 10px #1a110a, -5px -5px 10px #3c291e;
-
             border: 1px solid rgba(210, 139, 75, 0.3);
-
             display: flex; justify-content: center; align-items: center; transition: 0.3s;
-
         }
-
         .icon-3d-wrapper i { font-size: 2rem; color: var(--gold-primary); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: 0.3s; }
-
         .service-card:hover .icon-3d-wrapper { border-color: var(--gold-primary); box-shadow: inset 5px 5px 10px #1a110a, inset -5px -5px 10px #3c291e; }
-
         
-
         .service-card h3 { color: var(--gold-light); margin-bottom: 15px; font-size: 1.4rem; }
-
         .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
-
-
         .feature-card { text-align: center; padding: 20px; }
-
         .feature-card .icon-3d-wrapper { width: 80px; height: 80px; margin-bottom: 15px; }
-
         .feature-card .icon-3d-wrapper i { font-size: 2.2rem; }
-
         .feature-card h3 { margin-bottom: 10px; color: var(--text-light); }
-
         .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-
-
         /* ================= تواصل معنا والخريطة (تضاريس واحترافية) ================= */
-
         .contact-info { text-align: center; margin-bottom: 40px; padding: 0 10px; }
-
         .contact-info p { font-size: 0.95rem; margin-bottom: 10px; word-wrap: break-word; }
-
         html[lang="ar"] .contact-info i { margin-left: 10px; color: var(--gold-primary); }
-
         html[lang="en"] .contact-info i { margin-right: 10px; color: var(--gold-primary); }
-
         
-
         .map-container { 
-
             position: relative; border-radius: 20px; overflow: hidden; 
-
             border: 2px solid var(--gold-primary); height: 450px; width: 100%; 
-
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-
         }
-
         
-
         /* فلتر CSS لتحويل الخريطة إلى شكل تضاريس متناسق مع الثيم */
-
         .map-container iframe { 
-
             width: 100% !important; height: 100% !important; border: none; 
-
             filter: contrast(1.1) saturate(1.3) sepia(0.2) hue-rotate(-10deg); 
-
         }
-
         
-
         /* الدبوس والأنيميشن الخاص به */
-
         .map-pin-center { 
-
             position: absolute; top: 50%; left: 50%; 
-
             transform: translate(-50%, -50%); 
-
             pointer-events: none; z-index: 10; 
-
             display: flex; flex-direction: column; align-items: center; 
-
         }
-
         .map-pin-icon { 
-
             color: var(--gold-primary); font-size: 3rem; margin-bottom: 5px; 
-
             animation: bouncePin 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1); 
-
             filter: drop-shadow(0 5px 8px rgba(0,0,0,0.9)); 
-
         }
-
         @keyframes bouncePin { 
-
             0% { transform: translateY(0); } 
-
             50% { transform: translateY(-15px); } 
-
             100% { transform: translateY(0); } 
-
         }
-
         
-
         /* المربع التعريفي بجوار الدبوس (Tooltip) */
-
         .map-tooltip {
-
             background: rgba(26, 17, 10, 0.95); backdrop-filter: blur(8px);
-
             color: var(--gold-light); padding: 8px 18px; border-radius: 8px; font-weight: bold; 
-
             border: 1px solid var(--gold-primary); font-size: 0.9rem; white-space: nowrap;
-
             box-shadow: 0 4px 15px rgba(210, 139, 75, 0.3); 
-
             animation: pulseTooltip 2s infinite;
-
             position: relative;
-
         }
-
         /* السهم الصغير للمربع التعريفي */
-
         .map-tooltip::after {
-
             content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
-
             border-width: 0 6px 6px 6px; border-style: solid;
-
             border-color: transparent transparent var(--gold-primary) transparent;
-
         }
-
-
 
         @keyframes pulseTooltip {
-
             0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.5); }
-
             70% { box-shadow: 0 0 0 10px rgba(210, 139, 75, 0); }
-
             100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); }
-
         }
-
-
 
         /* رسالة النطاق أسفل الخريطة مباشرة للتأكيد لجوجل */
-
         .service-area-badge {
-
             position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
-
             background: rgba(0,0,0,0.8); color: var(--text-light);
-
             padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px dashed var(--gold-primary);
-
             pointer-events: none; z-index: 10;
-
         }
-
-
 
         /* ================= البار السفلي ================= */
-
         .bottom-nav {
-
             position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
-
             background-color: rgba(43, 29, 20, 0.95); border: 1px solid var(--gold-primary);
-
             border-radius: 35px; display: flex; justify-content: space-around; align-items: center;
-
             padding: 5px 10px; width: 90%; max-width: 450px; z-index: 1000; backdrop-filter: blur(10px);
-
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-
         }
-
         .bottom-nav a {
-
             color: var(--gold-primary); text-decoration: none; font-size: 1.1rem;
-
             padding: 5px; border-radius: 12px; transition: 0.3s;
-
             display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; flex: 1; text-align: center;
-
         }
-
         .bottom-nav a:hover, .bottom-nav a:active {
-
             background-color: var(--gold-primary); color: var(--bg-color); transform: translateY(-3px);
-
         }
-
         .nav-text { font-size: 0.65rem; font-weight: 700; }
 
-
-
         /* ================= الأزرار العائمة ================= */
-
         .floating-action-menu {
-
             position: fixed;
-
             bottom: 95px;
-
             display: flex;
-
             flex-direction: column;
-
             gap: 12px;
-
             z-index: 1000;
-
         }
-
         html[lang="ar"] .floating-action-menu { left: 15px; }
-
         html[lang="en"] .floating-action-menu { right: 15px; }
 
-
-
         .float-btn {
-
             width: 45px; height: 45px;
-
             border-radius: 50%;
-
             display: flex; justify-content: center; align-items: center;
-
             font-size: 1.3rem;
-
             text-decoration: none; color: white;
-
             border: 2px solid white; transition: transform 0.3s;
-
         }
-
         .float-btn:hover { transform: scale(1.1); }
-
         
-
         .call-btn { background-color: var(--gold-primary); animation: pulseCall 2s infinite; animation-delay: 1s; }
-
         .wa-btn { background-color: #25d366; animation: pulseWA 2s infinite; }
 
-
-
         @keyframes pulseWA { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-
         @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(210, 139, 75, 0); } 100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); } }
 
-
-
         /* التذييل */
-
         footer { text-align: center; padding: 40px 15px 100px; background-color: #120b06; border-top: 1px solid rgba(210, 139, 75, 0.2); }
-
         .copyright { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
-
         .designer-badge, .designer-badge-loader { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid var(--silver); padding: 6px 15px; border-radius: 30px; text-decoration: none; background: linear-gradient(145deg, #2b1d14, #3a271c); transition: 0.3s; text-align: center; max-width: 100%; }
-
         .designer-badge span, .designer-badge-loader span { color: var(--silver); font-weight: bold; font-size: 0.7rem; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); white-space: normal; }
-
         .designer-badge:hover { background: var(--silver); transform: scale(1.05); }
-
         .designer-badge:hover span { color: #fff; text-shadow: none; }
 
-
-
         /* ================= التجاوب للشاشات الصغيرة ================= */
-
         @media (max-width: 768px) {
-
             section { padding: 80px 5% 40px; }
-
             .section-title { font-size: 1.8rem; margin-bottom: 30px; }
-
             .hero { padding-top: 100px; min-height: 70vh; }
-
             .hero h1 { font-size: 1.5rem; }
-
             .hero p { font-size: 0.95rem; }
-
             .about-text { padding: 25px 15px; font-size: 1rem; line-height: 1.7; }
-
             .grid-container { grid-template-columns: 1fr; gap: 20px; }
-
             .service-card { padding: 25px 15px; }
-
             .map-container { height: 350px; }
-
             .bottom-nav { width: 95%; bottom: 10px; }
-
             .floating-action-menu { bottom: 85px; }
-
             .float-btn { width: 40px; height: 40px; font-size: 1.2rem; }
-
             header .site-title { font-size: 0.95rem; }
-
         }
-
     </style>
-
 </head>
-
 <body class="no-scroll">
 
-
-
     <div id="loader">
-
         <div class="loader-content">
-
             <div class="loader-image-frame">
-
                 <img src="https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png" alt="شعار مجدي رزق للنجارة">
-
             </div>
-
             <p class="loading-text">
-
                 <span class="ar">جاري تجهيز الموقع</span><span class="en">Loading Website</span><span class="dots"></span>
-
             </p>
-
         </div>
-
         <div class="loader-footer">
-
             <div class="designer-badge-loader">
-
                 <span class="ar">👑 تم التصميم بواسطة المهندس إسلام الشيخ 👑</span>
-
                 <span class="en">👑 Designed by Eng. Islam Elsheikh 👑</span>
-
             </div>
-
         </div>
-
     </div>
-
-
 
     <header>
-
         <div class="header-right">
-
             <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></button>
-
             <div class="site-title">
-
                 <span class="ar">مجدي رزق فني نجارة</span>
-
                 <span class="en">Magdi Rizk Carpentry</span>
-
             </div>
-
         </div>
-
         <button id="langToggleBtn" class="lang-btn">EN</button>
-
     </header>
 
-
-
     <div class="side-menu" id="sideMenu">
-
         <a href="#hero" onclick="toggleMenu()"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
-
         <a href="#about" onclick="toggleMenu()"><span class="ar">من أنا</span><span class="en">About Me</span></a>
-
         <a href="#services" onclick="toggleMenu()"><span class="ar">خدماتي</span><span class="en">Services</span></a>
-
         <a href="#why-us" onclick="toggleMenu()"><span class="ar">لماذا أنا</span><span class="en">Why Me</span></a>
-
         <a href="#contact" onclick="toggleMenu()"><span class="ar">تواصل معي</span><span class="en">Contact</span></a>
-
     </div>
-
-
 
     <section id="hero" class="hero reveal">
-
         <h1>
-
             <span class="ar">مجدي رزق | فني نجارة وتفصيل ديكورات خشبية بالرياض</span>
-
             <span class="en">Magdi Rizk | Pro Carpenter & Custom Wooden Decors in Riyadh</span>
-
         </h1>
-
         <p>
-
             <span class="ar">هل تبحث عن الفخامة والجودة في أعمال النجارة لمنزلك؟ أقدم لك أرقى خدمات تفصيل الخزائن، غرف النوم، والديكورات الجدارية بلمسات فنية إبداعية تحول مساحاتك إلى تحف فنية. أتميز بالدقة المتناهية والاحترافية العالية في تنفيذ كافة أعمال الديكور الخشبي المودرن والكلاسيك. أعتمد على أفضل أنواع الأخشاب لضمان جودة تدوم طويلاً مع أسعار تنافسية. نخدم حي المصيف، حي التعاون، وكافة أحياء شمال الرياض.</span>
-
             <span class="en">Looking for luxury and quality in woodwork? I offer the finest custom cabinets, bedrooms, and wall decors with creative touches. I excel in precision and professionalism in executing all modern and classic wooden decor works. Serving Al Maseef, Al Taawun, and all North Riyadh districts.</span>
-
         </p>
-
     </section>
-
-
 
     <section id="about">
-
         <h2 class="section-title reveal"><span class="ar">من أنا</span><span class="en">About Me</span></h2>
-
         <div class="about-text reveal">
-
             <span class="ar"><strong>أنا مجدي رزق،</strong> فني نجارة خبير ومتخصص في عالم الديكورات الخشبية والموبيليا الراقية بالرياض. أمتلك سنوات من الخبرة الواسعة والميدانية في تقديم حلول خشبية متكاملة تلبي كافة تطلعات عملائي الكرام. أجمع بين المهارة الحرفية اليدوية والفهم العميق لأحدث اتجاهات التصميم الداخلي، لأقدم لك نتائج مبهرة تتجاوز توقعاتك بجودة لا تضاهى ومتانة تعيش لأجيال.</span>
-
             <span class="en"><strong>I am Magdi Rizk,</strong> an expert carpentry technician specializing in luxury wooden decors and furniture in Riyadh. I have years of extensive field experience providing comprehensive wooden solutions. I combine manual craftsmanship with a deep understanding of the latest interior design trends to deliver stunning results.</span>
-
         </div>
-
     </section>
-
-
 
     <section id="services">
-
         <h2 class="section-title reveal"><span class="ar">خدماتي</span><span class="en">My Services</span></h2>
-
         <div class="grid-container">
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-box-open"></i></div>
-
                 <h3><span class="ar">تفصيل خزائن</span><span class="en">Custom Cabinets</span></h3>
-
                 <p><span class="ar">تصميم وتنفيذ خزائن عملية وأنيقة تناسب كافة المساحات والاحتياجات بأجود أنواع الأخشاب والإكسسوارات المتينة.</span><span class="en">Design and execution of practical and elegant custom cabinets to suit all spaces and needs with the highest quality wood.</span></p>
-
             </div>
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-door-closed"></i></div>
-
                 <h3><span class="ar">تصميم وتفصيل دواليب</span><span class="en">Custom Wardrobes</span></h3>
-
                 <p><span class="ar">دواليب ملابس عصرية ومبتكرة بتصميمات تستغل المساحات بذكاء، مع تقسيمات داخلية تلبي احتياجك اليومي.</span><span class="en">Modern and innovative wardrobes designed to use space smartly, with internal divisions that meet your daily needs.</span></p>
-
             </div>
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-bed"></i></div>
-
                 <h3><span class="ar">تصميم وتفصيل غرف نوم</span><span class="en">Custom Bedrooms</span></h3>
-
                 <p><span class="ar">غرف نوم رئيسية تعكس الفخامة والراحة بتفاصيل خشبية متقنة ومصممة خصيصاً لتناسب ذوقك الرفيع.</span><span class="en">Master bedrooms that reflect luxury and comfort with exquisite wooden details, tailored to your refined taste.</span></p>
-
             </div>
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-layer-group"></i></div>
-
                 <h3><span class="ar">تفصيل ديكورات جدارية</span><span class="en">Wall Decors</span></h3>
-
                 <p><span class="ar">تكسيات خشبية وديكورات جدارية راقية تزيد من فخامة وجماليات المكان وتضفي دفئاً على مساحتك.</span><span class="en">Luxurious wooden cladding and wall decors that increase the elegance and add warmth to your space.</span></p>
-
             </div>
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-tv"></i></div>
-
                 <h3><span class="ar">تفصيل ديكور شاشات</span><span class="en">TV Decors</span></h3>
-
                 <p><span class="ar">مكتبات تلفزيون وديكورات شاشات مودرن وكلاسيك مصممة خصيصاً لتناسب صالتك وتخفي الأسلاك بذكاء.</span><span class="en">Modern and classic TV cabinets and decors specially designed to fit your living room and cleverly hide wires.</span></p>
-
             </div>
-
             <div class="service-card reveal" onclick="this.classList.toggle('active')">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-tools"></i></div>
-
                 <h3><span class="ar">صيانة وتجديد النجارة</span><span class="en">Carpentry Maintenance</span></h3>
-
                 <p><span class="ar">خدمات صيانة وتجديد شاملة لكافة الأعمال الخشبية والموبيليا والأبواب لتعود كالجديدة تماماً مع معالجة الخدوش.</span><span class="en">Comprehensive maintenance and renewal services for all woodwork, furniture, and doors to return them as good as new.</span></p>
-
             </div>
-
         </div>
-
     </section>
-
-
 
     <section id="why-us" style="background-color: #1f140e;">
-
         <h2 class="section-title reveal"><span class="ar">لماذا أنا خيارك الأول؟</span><span class="en">Why Choose Me?</span></h2>
-
         <div class="grid-container">
-
             <div class="feature-card reveal">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-medal"></i></div>
-
                 <h3><span class="ar">دقة في العمل وجودة في التنفيذ</span><span class="en">Precision & Quality</span></h3>
-
                 <p><span class="ar">أعتمد على أجود أنواع الأخشاب وخبرتي الواسعة لأضمن لك تشطيبات خشبية متينة وخالية من العيوب تماماً.</span><span class="en">I rely on the finest woods and extensive experience to ensure flawless and durable wooden finishes.</span></p>
-
             </div>
-
             <div class="feature-card reveal">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-clock"></i></div>
-
                 <h3><span class="ar">التزام بمواعيد التسليم</span><span class="en">On-Time Delivery</span></h3>
-
                 <p><span class="ar">أقدر وقتك وألتزم بتسليم وتركيب الأعمال في الوقت المتفق عليه تماماً دون أي تأخير أو أعذار.</span><span class="en">I value your time and strictly deliver and install projects on schedule without delays.</span></p>
-
             </div>
-
             <div class="feature-card reveal">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-tags"></i></div>
-
                 <h3><span class="ar">أسعار تنافسية ومدروسة</span><span class="en">Competitive Prices</span></h3>
-
                 <p><span class="ar">معادلة ذهبية أقدمها لك تجمع بين أعلى معايير الجودة والفخامة مع الأسعار التي تناسب ميزانيتك.</span><span class="en">A golden equation combining top quality and luxury standards with affordable pricing.</span></p>
-
             </div>
-
             <div class="feature-card reveal">
-
                 <div class="icon-3d-wrapper"><i class="fas fa-shield-alt"></i></div>
-
                 <h3><span class="ar">ضمان حقيقي لما بعد التنفيذ</span><span class="en">Post-Work Guarantee</span></h3>
-
                 <p><span class="ar">أقدم لك ضماناً حقيقياً لراحتك، وأتواجد لخدمتك وصيانة أعمالك حتى بعد انتهاء التركيب والتسليم.</span><span class="en">I provide a real warranty and remain at your service even after project completion and delivery.</span></p>
-
             </div>
-
         </div>
-
     </section>
-
-
 
     <section id="contact">
-
         <h2 class="section-title reveal"><span class="ar">تواصل معي</span><span class="en">Contact Me</span></h2>
-
         <div class="contact-info reveal">
-
             <p><i class="fas fa-phone"></i> <span class="ar">رقم التواصل: </span><span class="en">Phone: </span><a href="tel:0537328021" style="color:var(--text-light); text-decoration:none; direction:ltr; display:inline-block;">0537328021</a></p>
-
             <p><i class="fas fa-envelope"></i> <span class="ar">البريد الإلكتروني: </span><span class="en">Email: </span><a href="mailto:senoodaamagddy@gmail.com" style="color:var(--text-light); text-decoration:none;">senoodaamagddy@gmail.com</a></p>
-
         </div>
-
         
-
         <div class="map-container reveal">
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57968.05136631655!2d46.62982689954311!3d24.76107906627651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e514ba8c9d34653%3A0x66af413fb5d885d7!2z2YXYsdiy2YjZgiDZgdmG2Yog2YbYrNin2LHYqQ!5e0!3m2!1sen!2ssa!4v1774956728654!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28982.102171266466!2d46.69055495!3d24.769321650000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x818d4a6543785d4b%3A0x2e785abd2eafabd9!2z2YXYrNiv2Yog2LHYstmCINmB2YbZiiDZhtis2KfYsdip!5e0!3m2!1sar!2ssa!4v1774957487033!5m2!1sar!2ssa" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
-
             <div class="map-pin-center">
-
                 <div class="map-tooltip">
-
                     <span class="ar">مجدي رزق فني نجارة</span>
-
                     <span class="en">Magdi Rizk Carpenter</span>
-
                 </div>
-
                 <i class="fas fa-map-marker-alt map-pin-icon"></i>
-
             </div>
-
             
-
             <div class="service-area-badge">
-
                 نطاق الخدمة: حي المصيف والتعاون
-
             </div>
-
         </div>
-
     </section>
 
-
-
     <div class="floating-action-menu">
-
         <a href="tel:0537328021" class="float-btn call-btn" aria-label="Call">
-
             <i class="fas fa-phone-alt"></i>
-
         </a>
-
         <a href="https://wa.me/966537328021" class="float-btn wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-
             <i class="fab fa-whatsapp"></i>
-
         </a>
-
     </div>
 
-
-
     <nav class="bottom-nav">
-
         <a href="#hero">
-
             <i class="fas fa-home"></i>
-
             <span class="nav-text"><span class="ar">الرئيسية</span><span class="en">Home</span></span>
-
         </a>
-
         <a href="#services">
-
             <i class="fas fa-tools"></i>
-
             <span class="nav-text"><span class="ar">خدماتي</span><span class="en">Services</span></span>
-
         </a>
-
         <a href="#why-us">
-
             <i class="fas fa-star"></i>
-
             <span class="nav-text"><span class="ar">لماذا أنا</span><span class="en">Why Me</span></span>
-
         </a>
-
         <a href="#contact">
-
             <i class="fas fa-phone-alt"></i>
-
             <span class="nav-text"><span class="ar">تواصل</span><span class="en">Contact</span></span>
-
         </a>
-
     </nav>
 
-
-
     <footer>
-
         <div class="copyright">
-
             <i class="fas fa-copyright"></i>
-
             <span class="ar">جميع الحقوق محفوظة لدى : مجدي رزق فني نجارة 2026</span>
-
             <span class="en">All rights reserved to Magdi Rizk Carpentry 2026</span>
-
         </div>
-
         
-
         <a href="https://wa.me/966547194788" target="_blank" class="designer-badge" rel="noopener noreferrer">
-
             <span class="ar">👑 تم التصميم بواسطة المهندس إسلام الشيخ 👑</span>
-
             <span class="en">👑 Designed by Eng. Islam Elsheikh 👑</span>
-
         </a>
-
     </footer>
 
-
-
     <script>
-
         // إعدادات شاشة التحميل (3 ثواني)
-
         document.addEventListener("DOMContentLoaded", () => {
-
             setTimeout(() => {
-
                 const loader = document.getElementById('loader');
-
                 loader.classList.add('hidden');
-
                 document.body.classList.remove('no-scroll');
-
                 setTimeout(() => { loader.style.display = 'none'; }, 500);
-
             }, 3000); 
-
         });
-
-
 
         // القائمة الجانبية
-
         function toggleMenu() {
-
             const sideMenu = document.getElementById('sideMenu');
-
             sideMenu.classList.toggle('active');
-
         }
-
-
 
         // نظام اللغتين التلقائي واليدوي
-
         const langBtn = document.getElementById('langToggleBtn');
-
         let currentLang = 'ar';
 
-
-
         function setLanguage(lang) {
-
             currentLang = lang;
-
             document.documentElement.lang = lang;
-
             langBtn.innerText = lang === 'ar' ? 'EN' : 'AR';
-
             localStorage.setItem('siteLang', lang);
-
             document.getElementById('sideMenu').classList.remove('active');
-
         }
-
-
 
         langBtn.addEventListener('click', () => {
-
             setLanguage(currentLang === 'ar' ? 'en' : 'ar');
-
         });
-
-
 
         document.addEventListener('DOMContentLoaded', () => {
-
             const savedLang = localStorage.getItem('siteLang');
-
             if (savedLang) {
-
                 setLanguage(savedLang);
-
             } else {
-
                 const browserLang = navigator.language || navigator.userLanguage;
-
                 setLanguage(browserLang.toLowerCase().startsWith('ar') ? 'ar' : 'en');
-
             }
-
         });
 
-
-
         // كود الأنيميشن عند السكرول
-
         function revealOnScroll() {
-
             const reveals = document.querySelectorAll('.reveal');
-
             const windowHeight = window.innerHeight;
-
             const elementVisible = 100;
 
-
-
             reveals.forEach((reveal) => {
-
                 const elementTop = reveal.getBoundingClientRect().top;
-
                 if (elementTop < windowHeight - elementVisible) {
-
                     reveal.classList.add('active');
-
                 }
-
             });
-
         }
-
         window.addEventListener('scroll', revealOnScroll);
-
         setTimeout(revealOnScroll, 3100); 
-
     </script>
-
 </body>
-
 </html>
