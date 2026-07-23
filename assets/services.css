@@ -1228,3 +1228,35 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Riyadh service areas */
+.neighborhoods-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+.neighborhood-card {
+    height: 100%;
+    padding: 25px 20px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 30px rgba(66, 43, 29, 0.08);
+    text-align: center;
+}
+.neighborhood-card i {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border-radius: 14px;
+    background: rgba(154, 87, 40, 0.09);
+    color: var(--gold-light);
+}
+.neighborhood-card h3 { margin: 0 0 10px; color: var(--gold-light); font-size: 1.08rem; }
+.neighborhood-card p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.9; }
+.neighborhood-note { max-width: 900px; margin: 24px auto 0; color: var(--muted); text-align: center; font-size: 0.88rem; }
+@media (max-width: 980px) { .neighborhoods-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .neighborhoods-grid { grid-template-columns: 1fr; } }
+
