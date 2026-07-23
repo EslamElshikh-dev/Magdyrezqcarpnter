@@ -7,7 +7,7 @@
     <meta name="keywords" content="نجار, تفصيل خزائن, نجار بالرياض, نجار الرياض, تفصيل خزائن بالرياض, نجار تفصيل خزائن, تفصيل دواليب, فني نجارة, مجدي رزق">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="مجدي رزق فني نجارة">
-    <meta name="theme-color" content="#1a110a">
+    <meta name="theme-color" content="#f8f6f2">
     <link rel="canonical" href="https://magdyrezqfaninejara.com/">
     <link rel="alternate" hreflang="ar-SA" href="https://magdyrezqfaninejara.com/">
     <link rel="alternate" hreflang="x-default" href="https://magdyrezqfaninejara.com/">
@@ -52,7 +52,10 @@
           "url": "https://magdyrezqfaninejara.com/",
           "logo": "https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png",
           "image": "https://imgg.io/images/2026/03/19/c79d40338dd22427f1c7089e42d61749.png",
-          "telephone": "+966537328021",
+          "telephone": [
+            "+966537328021",
+            "+966561311060"
+          ],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "الرياض",
@@ -71,16 +74,28 @@
             "ar",
             "en"
           ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+966537328021",
-            "contactType": "customer service",
-            "areaServed": "SA",
-            "availableLanguage": [
-              "Arabic",
-              "English"
-            ]
-          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+966537328021",
+              "contactType": "customer service",
+              "areaServed": "SA",
+              "availableLanguage": [
+                "Arabic",
+                "English"
+              ]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+966561311060",
+              "contactType": "customer service",
+              "areaServed": "SA",
+              "availableLanguage": [
+                "Arabic",
+                "English"
+              ]
+            }
+          ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "خدمات النجارة وتفصيل الخزائن",
@@ -214,15 +229,17 @@
     </script>
 
     <style>
-        /* ================= المتغيرات والألوان (ثيم الخشب الفاخر) ================= */
+        /* ================= المتغيرات والألوان (ثيم خشبي فاتح) ================= */
         :root {
-            --bg-color: #1a110a; 
-            --surface-color: #2b1d14; 
-            --gold-primary: #d28b4b; 
-            --gold-light: #e8bd9b; 
-            --text-light: #f4ece6; 
-            --text-muted: #b8a598; 
-            --silver: #a07855; 
+            color-scheme: light;
+            --bg-color: #f8f6f2;
+            --surface-color: #ffffff;
+            --gold-primary: #9a5728;
+            --gold-light: #74401f;
+            --text-light: #2b211b;
+            --text-muted: #6b5f57;
+            --silver: #8b6a54;
+            --call-blue: #1d8fe1;
         }
 
         /* الإعدادات العامة والخطوط */
@@ -240,7 +257,9 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background:
+                radial-gradient(circle at 12% 8%, rgba(154, 87, 40, 0.07), transparent 26rem),
+                var(--bg-color);
             color: var(--text-light);
             line-height: 1.6;
             padding-bottom: 90px;
@@ -254,10 +273,10 @@
 
         /* الرأس (Header) */
         header {
-            background-color: rgba(43, 29, 20, 0.95); padding: 15px 5%;
+            background-color: rgba(255, 253, 250, 0.95); padding: 15px 5%;
             position: fixed; width: 100%; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(210, 139, 75, 0.3); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(122, 73, 38, 0.22); backdrop-filter: blur(10px);
         }
         .header-right { display: flex; align-items: center; gap: 15px; }
         .site-title { color: var(--gold-primary); font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
@@ -274,16 +293,17 @@
             position: fixed; top: 60px; width: 250px; height: calc(100vh - 60px);
             background-color: var(--surface-color); transition: 0.4s; z-index: 999; padding-top: 20px;
             right: -100%; border-left: 1px solid var(--gold-primary);
+            box-shadow: -16px 20px 40px rgba(66, 43, 29, 0.12);
         }
         html[lang="ar"] .side-menu.active { right: 0; }
         html[lang="en"] .side-menu { left: -100%; right: auto; border-right: 1px solid var(--gold-primary); border-left: none; }
         html[lang="en"] .side-menu.active { left: 0; }
         .side-menu a {
             display: block; padding: 15px 20px; color: var(--text-light); text-decoration: none;
-            font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+            font-size: 1.1rem; border-bottom: 1px solid rgba(122, 73, 38, 0.1); transition: 0.3s;
         }
-        html[lang="ar"] .side-menu a:hover { color: var(--gold-primary); padding-right: 30px; background: rgba(0,0,0,0.2); }
-        html[lang="en"] .side-menu a:hover { color: var(--gold-primary); padding-left: 30px; background: rgba(0,0,0,0.2); }
+        html[lang="ar"] .side-menu a:hover { color: var(--gold-primary); padding-right: 30px; background: rgba(154, 87, 40, 0.08); }
+        html[lang="en"] .side-menu a:hover { color: var(--gold-primary); padding-left: 30px; background: rgba(154, 87, 40, 0.08); }
 
         /* الأقسام العامة */
         section { padding: 100px 5% 50px; }
@@ -296,38 +316,39 @@
         /* الرئيسية */
         .hero {
             text-align: center; padding-top: 150px; min-height: 80vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; background: radial-gradient(circle at center, #352317 0%, #1a110a 100%);
+            justify-content: center; align-items: center; background: radial-gradient(circle at center, #f0e4d7 0%, #fbfaf8 72%, #f8f6f2 100%);
         }
         .hero h1 {
             color: var(--gold-primary); font-size: clamp(1.8rem, 4vw, 2.5rem); max-width: 900px;
-            line-height: 1.4; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(210, 139, 75, 0.3); padding: 0 10px;
+            line-height: 1.4; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(154, 87, 40, 0.12); padding: 0 10px;
         }
         .hero p { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; padding: 0 15px; }
 
         /* من نحن والخدمات والمزايا */
         .about-text {
             background-color: var(--surface-color); padding: 40px; border-radius: 15px;
-            border: 1px solid rgba(210, 139, 75, 0.2); text-align: center; font-size: 1.1rem; line-height: 1.9;
+            border: 1px solid rgba(122, 73, 38, 0.18); text-align: center; font-size: 1.1rem; line-height: 1.9;
+            box-shadow: 0 12px 34px rgba(66, 43, 29, 0.07);
         }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .service-card {
             display: flex; flex-direction: column;
-            background-color: var(--surface-color); border: 1px solid rgba(210, 139, 75, 0.4);
+            background-color: var(--surface-color); border: 1px solid rgba(122, 73, 38, 0.2);
             border-radius: 15px; padding: 30px 20px; text-align: center; transition: 0.3s;
             color: inherit; text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(66, 43, 29, 0.09);
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(210, 139, 75, 0.15); border-color: var(--gold-primary); background: #312117; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(154, 87, 40, 0.13); border-color: var(--gold-primary); background: #fffaf5; }
         
         .icon-3d-wrapper {
             width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 50%;
-            background: linear-gradient(145deg, #302016, #241810);
-            box-shadow: 5px 5px 10px #1a110a, -5px -5px 10px #3c291e;
-            border: 1px solid rgba(210, 139, 75, 0.3);
+            background: linear-gradient(145deg, #ffffff, #efe6dc);
+            box-shadow: 5px 5px 12px rgba(66, 43, 29, 0.13), -5px -5px 12px #ffffff;
+            border: 1px solid rgba(122, 73, 38, 0.18);
             display: flex; justify-content: center; align-items: center; transition: 0.3s;
         }
-        .icon-3d-wrapper i { font-size: 2rem; color: var(--gold-primary); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); transition: 0.3s; }
-        .service-card:hover .icon-3d-wrapper { border-color: var(--gold-primary); box-shadow: inset 5px 5px 10px #1a110a, inset -5px -5px 10px #3c291e; }
+        .icon-3d-wrapper i { font-size: 2rem; color: var(--gold-primary); filter: drop-shadow(0 2px 4px rgba(66,43,29,0.16)); transition: 0.3s; }
+        .service-card:hover .icon-3d-wrapper { border-color: var(--gold-primary); box-shadow: inset 4px 4px 9px rgba(66,43,29,0.12), inset -4px -4px 9px #ffffff; }
         
         .service-card h3 { color: var(--gold-light); margin-bottom: 15px; font-size: 1.4rem; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
@@ -342,8 +363,8 @@
         }
         .services-quick-nav a {
             min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
-            padding: 9px 14px; border: 1px solid rgba(210, 139, 75, 0.34);
-            border-radius: 999px; background: rgba(43, 29, 20, 0.7);
+            padding: 9px 14px; border: 1px solid rgba(122, 73, 38, 0.2);
+            border-radius: 999px; background: rgba(255, 255, 255, 0.82);
             color: var(--gold-light); text-decoration: none; font-weight: 700; font-size: 0.88rem;
             transition: 0.25s;
         }
@@ -354,15 +375,15 @@
         }
         .blog-card {
             min-height: 100%; display: flex; flex-direction: column; padding: 28px 24px;
-            border: 1px solid rgba(210, 139, 75, 0.36); border-radius: 18px;
-            background: linear-gradient(145deg, rgba(210, 139, 75, 0.07), transparent), var(--surface-color);
-            color: inherit; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            border: 1px solid rgba(122, 73, 38, 0.2); border-radius: 18px;
+            background: linear-gradient(145deg, rgba(154, 87, 40, 0.055), transparent), var(--surface-color);
+            color: inherit; text-decoration: none; box-shadow: 0 8px 24px rgba(66,43,29,0.09);
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
-        .blog-card:hover { transform: translateY(-7px); border-color: var(--gold-primary); box-shadow: 0 16px 34px rgba(0,0,0,0.34); }
+        .blog-card:hover { transform: translateY(-7px); border-color: var(--gold-primary); box-shadow: 0 16px 34px rgba(66,43,29,0.14); }
         .blog-card-icon {
             width: 54px; height: 54px; display: grid; place-items: center;
-            margin-bottom: 18px; border-radius: 16px; background: rgba(210, 139, 75, 0.11);
+            margin-bottom: 18px; border-radius: 16px; background: rgba(154, 87, 40, 0.09);
             color: var(--gold-light); font-size: 1.35rem;
         }
         .blog-card time { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 10px; }
@@ -379,7 +400,7 @@
         .feature-card .icon-3d-wrapper i { font-size: 2.2rem; }
         .feature-card h3 { margin-bottom: 10px; color: var(--text-light); }
         .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
-        .section-deep { background-color: #1f140e; }
+        .section-deep { background-color: #f0ebe4; }
 
 
         .hero-actions {
@@ -392,14 +413,14 @@
         }
         .hero-cta.primary { background: var(--gold-primary); color: var(--bg-color); }
         .hero-cta.secondary { border: 1px solid var(--gold-primary); color: var(--gold-light); }
-        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(210, 139, 75, 0.2); }
+        .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(154, 87, 40, 0.16); }
         .section-lead {
             max-width: 820px; margin: -20px auto 32px; text-align: center;
             color: var(--text-muted); line-height: 1.9;
         }
         .faq-list { max-width: 900px; margin: 0 auto; display: grid; gap: 14px; }
         .faq-item {
-            background: var(--surface-color); border: 1px solid rgba(210, 139, 75, 0.35);
+            background: var(--surface-color); border: 1px solid rgba(122, 73, 38, 0.2);
             border-radius: 14px; overflow: hidden;
         }
         .faq-item summary {
@@ -437,13 +458,13 @@
         .map-container { 
             position: relative; border-radius: 20px; overflow: hidden; 
             border: 2px solid var(--gold-primary); height: 450px; width: 100%; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 15px 35px rgba(66,43,29,0.16);
         }
         
         /* فلتر CSS لتحويل الخريطة إلى شكل تضاريس متناسق مع الثيم */
         .map-container iframe { 
             width: 100% !important; height: 100% !important; border: none; 
-            filter: contrast(1.1) saturate(1.3) sepia(0.2) hue-rotate(-10deg); 
+            filter: contrast(1.02) saturate(0.92) brightness(1.04);
         }
         
         /* الدبوس والأنيميشن الخاص به */
@@ -456,7 +477,7 @@
         .map-pin-icon { 
             color: var(--gold-primary); font-size: 3rem; margin-bottom: 5px; 
             animation: bouncePin 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1); 
-            filter: drop-shadow(0 5px 8px rgba(0,0,0,0.9)); 
+            filter: drop-shadow(0 5px 8px rgba(66,43,29,0.28));
         }
         @keyframes bouncePin { 
             0% { transform: translateY(0); } 
@@ -466,10 +487,10 @@
         
         /* المربع التعريفي بجوار الدبوس (Tooltip) */
         .map-tooltip {
-            background: rgba(26, 17, 10, 0.95); backdrop-filter: blur(8px);
+            background: rgba(255, 253, 250, 0.96); backdrop-filter: blur(8px);
             color: var(--gold-light); padding: 8px 18px; border-radius: 8px; font-weight: bold; 
             border: 1px solid var(--gold-primary); font-size: 0.9rem; white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(210, 139, 75, 0.3); 
+            box-shadow: 0 4px 15px rgba(154, 87, 40, 0.17);
             animation: pulseTooltip 2s infinite;
             position: relative;
         }
@@ -481,15 +502,15 @@
         }
 
         @keyframes pulseTooltip {
-            0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.5); }
-            70% { box-shadow: 0 0 0 10px rgba(210, 139, 75, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(154, 87, 40, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(154, 87, 40, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(154, 87, 40, 0); }
         }
 
         /* رسالة النطاق أسفل الخريطة مباشرة للتأكيد لجوجل */
         .service-area-badge {
             position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
-            background: rgba(0,0,0,0.8); color: var(--text-light);
+            background: rgba(255,253,250,0.93); color: var(--text-light);
             padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px dashed var(--gold-primary);
             pointer-events: none; z-index: 10;
         }
@@ -497,10 +518,10 @@
         /* ================= البار السفلي ================= */
         .bottom-nav {
             position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
-            background-color: rgba(43, 29, 20, 0.95); border: 1px solid var(--gold-primary);
+            background-color: rgba(255, 255, 255, 0.96); border: 1px solid var(--gold-primary);
             border-radius: 35px; display: flex; justify-content: space-around; align-items: center;
             padding: 5px 10px; width: 90%; max-width: 450px; z-index: 1000; backdrop-filter: blur(10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 25px rgba(66,43,29,0.18);
         }
         .bottom-nav a {
             color: var(--gold-primary); text-decoration: none; font-size: 1.1rem;
@@ -534,17 +555,17 @@
         }
         .float-btn:hover { transform: scale(1.1); }
         
-        .call-btn { background-color: var(--gold-primary); animation: pulseCall 2s infinite; animation-delay: 1s; }
+        .call-btn { background-color: var(--call-blue); animation: pulseCall 2s infinite; animation-delay: 1s; }
         .wa-btn { background-color: #25d366; animation: pulseWA 2s infinite; }
 
         @keyframes pulseWA { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(210, 139, 75, 0); } 100% { box-shadow: 0 0 0 0 rgba(210, 139, 75, 0); } }
+        @keyframes pulseCall { 0% { box-shadow: 0 0 0 0 rgba(29, 143, 225, 0.65); } 70% { box-shadow: 0 0 0 10px rgba(29, 143, 225, 0); } 100% { box-shadow: 0 0 0 0 rgba(29, 143, 225, 0); } }
 
         /* التذييل */
-        footer { text-align: center; padding: 40px 15px 100px; background-color: #120b06; border-top: 1px solid rgba(210, 139, 75, 0.2); }
+        footer { text-align: center; padding: 40px 15px 100px; background-color: #e9dfd4; border-top: 1px solid rgba(122, 73, 38, 0.16); }
         .copyright { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
-        .designer-badge { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid var(--silver); padding: 6px 15px; border-radius: 30px; text-decoration: none; background: linear-gradient(145deg, #2b1d14, #3a271c); transition: 0.3s; text-align: center; max-width: 100%; }
-        .designer-badge span { color: var(--silver); font-weight: bold; font-size: 0.7rem; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); white-space: normal; }
+        .designer-badge { display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid var(--silver); padding: 6px 15px; border-radius: 30px; text-decoration: none; background: linear-gradient(145deg, #ffffff, #eee5dc); transition: 0.3s; text-align: center; max-width: 100%; }
+        .designer-badge span { color: var(--silver); font-weight: bold; font-size: 0.7rem; text-shadow: none; white-space: normal; }
         .designer-badge:hover { background: var(--silver); transform: scale(1.05); }
         .designer-badge:hover span { color: #fff; text-shadow: none; }
 
@@ -767,6 +788,7 @@
         <h2 class="section-title reveal"><span class="ar">موقع مجدي رزق نجار في الرياض</span><span class="en">Magdi Rizk Carpenter Location in Riyadh</span></h2>
         <div class="contact-info reveal">
             <p><i class="fas fa-phone"></i> <span class="ar">اتصل لطلب نجار أو تفصيل خزائن: </span><span class="en">Phone: </span><a class="contact-link phone" href="tel:0537328021">0537328021</a></p>
+            <p><i class="fas fa-phone-volume"></i> <span class="ar">رقم اتصال إضافي: </span><span class="en">Additional call number: </span><a class="contact-link phone" href="tel:0561311060">0561311060</a></p>
             <p><i class="fas fa-envelope"></i> <span class="ar">البريد الإلكتروني: </span><span class="en">Email: </span><a class="contact-link" href="mailto:info@magdirizkcarpentry.com">info@magdirizkcarpentry.com</a></p>
             <p class="location-copy"><span class="ar">يمكنك استخدام الخريطة التالية للوصول إلى موقع مجدي رزق فني نجارة في الرياض، أو التواصل مباشرة لطلب خدمة تفصيل خزائن ودواليب وأعمال نجارة حسب المقاس.</span><span class="en">Use the map below to locate Magdi Rizk Carpentry in Riyadh or contact us for custom cabinet and carpentry services.</span></p>
         </div>
@@ -796,7 +818,7 @@
     </section>
 
     <div class="floating-action-menu">
-        <a href="tel:0537328021" class="float-btn call-btn" aria-label="اتصل بنجار مجدي رزق">
+        <a href="tel:0561311060" class="float-btn call-btn" aria-label="اتصل بنجار مجدي رزق على 0561311060">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://wa.me/966537328021" class="float-btn wa-btn" target="_blank" rel="noopener noreferrer" aria-label="راسل نجار مجدي رزق على واتساب">
