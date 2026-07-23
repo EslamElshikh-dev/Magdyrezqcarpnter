@@ -1,0 +1,58 @@
+name: Apply Magdy site updates
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/apply-magdy-site-updates.py"
+      - ".github/workflows/apply-magdy-site-updates.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply site updates
+        run: python scripts/apply-magdy-site-updates.py
+
+      - name: Validate generated HTML metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          files = list(Path('.').rglob('index.html'))
+          assert files, 'No HTML pages found'
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              assert 'id="riyadh-neighborhoods"' in text, f'Missing Riyadh neighborhoods section in {path}'
+              assert 'application-name' in text, f'Missing application name in {path}'
+              for block in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', text, flags=re.S):
+                  json.loads(block)
+          root = Path('index.html').read_text(encoding='utf-8')
+          expected = 'أفضل نجار تفصيل خزائن ودواليب بالرياض | النجار مجدي رزق'
+          assert f'<title>{expected}</title>' in root
+          assert expected in root
+          assert 'class="site-logo"' in root
+          print(f'Validated {len(files)} HTML pages')
+          PY
+
+      - name: Commit generated site changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit"
+          else
+            git commit -m "Update Magdy site branding, SEO, and Riyadh areas"
+            git push origin HEAD:main
+          fi
