@@ -1,16 +1,17 @@
 :root {
-    --bg: #160e08;
-    --bg-soft: #1f140d;
-    --surface: #2b1d14;
-    --surface-strong: #342217;
-    --gold: #d28b4b;
-    --gold-light: #f0c7a4;
-    --text: #f8f1eb;
-    --muted: #c4b1a4;
-    --line: rgba(210, 139, 75, 0.28);
+    color-scheme: light;
+    --bg: #f8f6f2;
+    --bg-soft: #f0ebe4;
+    --surface: #ffffff;
+    --surface-strong: #f4eee6;
+    --gold: #9a5728;
+    --gold-light: #74401f;
+    --text: #2b211b;
+    --muted: #6b5f57;
+    --line: rgba(122, 73, 38, 0.22);
     --green: #25d366;
     --blue: #1d8fe1;
-    --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+    --shadow: 0 18px 50px rgba(66, 43, 29, 0.12);
     --radius: 22px;
     --container: min(1160px, calc(100% - 32px));
 }
@@ -27,7 +28,7 @@ html {
 body {
     margin: 0;
     background:
-        radial-gradient(circle at 10% 8%, rgba(210, 139, 75, 0.08), transparent 24rem),
+        radial-gradient(circle at 10% 8%, rgba(154, 87, 40, 0.08), transparent 24rem),
         var(--bg);
     color: var(--text);
     font-family: "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -80,7 +81,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(31, 20, 13, 0.92);
+    background: rgba(255, 253, 250, 0.94);
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(16px);
 }
@@ -140,7 +141,7 @@ a {
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
     color: var(--gold-light);
-    background: rgba(210, 139, 75, 0.1);
+    background: rgba(154, 87, 40, 0.09);
 }
 
 .header-contact {
@@ -276,12 +277,12 @@ a {
 .button-primary {
     background: var(--gold);
     color: var(--bg);
-    box-shadow: 0 12px 28px rgba(210, 139, 75, 0.17);
+    box-shadow: 0 12px 28px rgba(154, 87, 40, 0.18);
 }
 
 .button-secondary {
     border-color: var(--line);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(154, 87, 40, 0.035);
     color: var(--gold-light);
 }
 
@@ -293,7 +294,7 @@ a {
     border: 1px solid var(--line);
     border-radius: 36px 10px 36px 10px;
     background:
-        linear-gradient(145deg, rgba(210, 139, 75, 0.12), rgba(22, 14, 8, 0.1)),
+        linear-gradient(145deg, rgba(154, 87, 40, 0.12), rgba(255, 255, 255, 0.3)),
         var(--surface);
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -303,7 +304,7 @@ a {
 .hero-visual::after {
     content: "";
     position: absolute;
-    border: 1px solid rgba(210, 139, 75, 0.22);
+    border: 1px solid rgba(154, 87, 40, 0.2);
     border-radius: 50%;
 }
 
@@ -322,13 +323,13 @@ a {
     z-index: 1;
     color: var(--gold-light);
     font-size: 6rem;
-    filter: drop-shadow(0 15px 22px rgba(0, 0, 0, 0.36));
+    filter: drop-shadow(0 15px 22px rgba(66, 43, 29, 0.2));
 }
 
 .trust-strip {
     margin-top: -1px;
     border-block: 1px solid var(--line);
-    background: rgba(43, 29, 20, 0.58);
+    background: rgba(240, 235, 228, 0.78);
 }
 
 .trust-grid {
@@ -355,7 +356,7 @@ a {
     display: grid;
     place-items: center;
     border-radius: 13px;
-    background: rgba(210, 139, 75, 0.1);
+    background: rgba(154, 87, 40, 0.09);
     color: var(--gold-light);
 }
 
@@ -375,7 +376,7 @@ a {
 
 .section-alt {
     background: var(--bg-soft);
-    border-block: 1px solid rgba(210, 139, 75, 0.1);
+    border-block: 1px solid rgba(122, 73, 38, 0.11);
 }
 
 .section-heading {
@@ -414,8 +415,8 @@ a {
     padding: clamp(24px, 4vw, 34px);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent), var(--surface);
-    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16);
+    background: linear-gradient(145deg, rgba(154, 87, 40, 0.025), transparent), var(--surface);
+    box-shadow: 0 10px 34px rgba(66, 43, 29, 0.08);
 }
 
 .content-card > i {
@@ -425,7 +426,7 @@ a {
     place-items: center;
     margin-bottom: 20px;
     border-radius: 15px;
-    background: rgba(210, 139, 75, 0.1);
+    background: rgba(154, 87, 40, 0.09);
     color: var(--gold-light);
     font-size: 1.3rem;
 }
@@ -516,7 +517,7 @@ a {
     padding: 28px;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: linear-gradient(135deg, rgba(210, 139, 75, 0.15), rgba(210, 139, 75, 0.04));
+    background: linear-gradient(135deg, rgba(154, 87, 40, 0.13), rgba(154, 87, 40, 0.035));
 }
 
 .note-panel > i {
@@ -573,7 +574,7 @@ a {
     place-items: center;
     margin-bottom: 22px;
     border-radius: 15px;
-    background: rgba(210, 139, 75, 0.1);
+    background: rgba(154, 87, 40, 0.09);
     color: var(--gold-light);
     font-size: 1.25rem;
 }
@@ -655,7 +656,7 @@ a {
     border: 1px solid var(--line);
     border-radius: 30px 10px 30px 10px;
     background:
-        radial-gradient(circle at 90% 20%, rgba(210, 139, 75, 0.18), transparent 23rem),
+        radial-gradient(circle at 90% 20%, rgba(154, 87, 40, 0.15), transparent 23rem),
         var(--surface);
     box-shadow: var(--shadow);
 }
@@ -680,7 +681,7 @@ a {
 .site-footer {
     padding: 46px 0 116px;
     border-top: 1px solid var(--line);
-    background: #100a06;
+    background: #e9dfd4;
 }
 
 .footer-grid {
@@ -719,7 +720,7 @@ a {
     width: var(--container);
     margin: 28px auto 0;
     padding-top: 22px;
-    border-top: 1px solid rgba(210, 139, 75, 0.13);
+    border-top: 1px solid rgba(122, 73, 38, 0.13);
     color: var(--muted);
     font-size: 0.8rem;
     text-align: center;
@@ -852,7 +853,7 @@ a {
     padding: 20px 24px;
     border-inline-start: 4px solid var(--gold);
     border-radius: 12px;
-    background: rgba(210, 139, 75, 0.08);
+    background: rgba(154, 87, 40, 0.08);
     color: var(--text);
 }
 
@@ -922,7 +923,7 @@ a {
 }
 
 .article-table th {
-    background: rgba(210, 139, 75, 0.1);
+    background: rgba(154, 87, 40, 0.1);
     color: var(--gold-light);
 }
 
@@ -945,7 +946,7 @@ a {
     padding: 18px;
     border: 1px solid var(--line);
     border-radius: 14px;
-    background: rgba(210, 139, 75, 0.05);
+    background: rgba(154, 87, 40, 0.05);
 }
 
 .key-point strong {
@@ -1022,8 +1023,8 @@ a {
         gap: 4px;
         padding: 14px 16px 18px;
         border-bottom: 1px solid var(--line);
-        background: rgba(31, 20, 13, 0.98);
-        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+        background: rgba(255, 253, 250, 0.99);
+        box-shadow: 0 18px 35px rgba(66, 43, 29, 0.14);
     }
 
     .main-nav.is-open a {
@@ -1192,8 +1193,8 @@ a {
         align-items: center;
         border: 1px solid var(--line);
         border-radius: 20px;
-        background: rgba(43, 29, 20, 0.96);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.42);
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: 0 12px 30px rgba(66, 43, 29, 0.18);
         backdrop-filter: blur(14px);
     }
 
