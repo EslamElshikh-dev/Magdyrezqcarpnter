@@ -1,0 +1,1 @@
+Temporary SEO image packaging files removed before merge.
